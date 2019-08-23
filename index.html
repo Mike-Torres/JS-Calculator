@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <Section class='calculator'>
+        <form>
+            <div>
+                <input id="display" class= "fontSize" type="text" maxlength="10" placeholder="0">
+            </div>
+        </form>
+        <div class="font border">
+            <input id="zero" class="font border" type="button" value="0" onclick="display(this.value)">
+            <input id="one" class="font buttonSize" type="button" value="1" onclick="display(this.value)">
+            <input id="two" class="font buttonSize" type="button" value="2" onclick="display(this.value)">
+            <input id="three" class="font buttonSize" type="button" value="3" onclick="display(this.value)">
+            <input id="four" class="font buttonSize" type="button" value="4" onclick="display(this.value)">
+            <input id="five" class="font buttonSize" type="button" value="5" onclick="display(this.value)">
+            <input id="six" class="font buttonSize" type="button" value="6" onclick="display(this.value)">
+            <input id="seven" class="font buttonSize" type="button" value="7" onclick="display(this.value)">
+            <input id="eight" class="font buttonSize" type="button" value="8" onclick="display(this.value)">
+            <input id="nine" class="font buttonSize" type="button" value="9" onclick="display(this.value)">
+
+            <input id="add" class="font buttonSize orange border" type="button" value="+" onclick="add()">
+            <input id="subtract" class="font buttonSize orange border " type="button" value="-" onclick="subtract()">
+            <input id="divide" class="font buttonSize orange border" type="button" value="/" onclick="divide()">
+            <input id="multiply" class="font orange border" type="button" value="x" onclick="multi()">
+            <input id="equal" class="font buttonSize orange border" type="button" value="=" onclick="equals()">
+
+            <input id="decimal" class="font border" type="button" value="." onclick="decimal()">
+            <input id="plusMinus" class="font buttonSize" type="button" value="+/-" onclick="plusMinus()">
+            <input id="clear" class="font buttonSize" type="button" value="C" onclick="clear()">
+            <input id="percent" class="font buttonSize" type="button" value="%" onclick="percent()">
+        </div>
+        <!-- 
+        <div id="add" class="font orange border">+</div>
+        <div id="subtract" class="font orange border">-</div>
+        <div id="multiply" class="font orange border">X</div>
+        <div id="divide" class="font orange border">/</div>
+
+        <div id="percent" class="font gray border">%</div>
+        <div id="clear" class="font gray border">C</div>
+        <div id="plusMinus" class="font gray border">+/-</div>
+        <div id="decimal" class="font border">.</div>
+        <div id="equal" class="font orange border">=</div> -->
+
+
+    </Section>
+
+</body>
+
+<script src="main.js"></script>
+
+</html>
