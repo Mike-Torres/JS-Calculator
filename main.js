@@ -10,18 +10,27 @@ var nineButton = document.getElementById('nine');
 var zeroButton = document.getElementById('zero');
 
 
-var oneButton = document.getElementById('decimal');
-var oneButton = document.getElementById('clear');
-var oneButton = document.getElementById('plusMinus');
-var oneButton = document.getElementById('percent');
+var decimalButton = document.getElementById('decimal');
+var clearButton = document.getElementById('clear');
+var plusMinusButton = document.getElementById('plusMinus');
+var percentButton = document.getElementById('percent');
 
 
-var oneButton = document.getElementById('add');
-var oneButton = document.getElementById('subtract');
-var oneButton = document.getElementById('multiply');
-var oneButton = document.getElementById('divide');
-var oneButton = document.getElementById('equal');
-
-var oneButton = document.getElementById('display');
+var addButton = document.getElementById('add');
+var subtractButton = document.getElementById('subtract');
+var multiplyButton = document.getElementById('multiply');
+var divideButton = document.getElementById('divide');
+var equalButton = document.getElementById('equal');
 
 
+
+var allButtons = document.getElementsByClassName('but-num')
+var allOperations = document.getElementsByClassName('but-ops')
+ 
+for(let i = 0; i <= allButtons.length; i++) {
+
+}
+
+for() {
+    
+}
