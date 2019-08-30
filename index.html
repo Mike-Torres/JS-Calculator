@@ -13,20 +13,20 @@
     <Section class='calculator'>
         <form>
             <div>
-                <input id="display" class="fontSize" type="text" maxlength="10" placeholder="0">
+                <input id="display" class="fontSize" maxlength="10" placeholder="0">
             </div>
         </form>
         <div class="font border">
-            <input id="zero" class="font border btn-num" type="button" value="0">
-            <input id="one" class="font buttonSize btn-num" type="button" value="1">
-            <input id="two" class="font buttonSize btn-num" type="button" value="2">
-            <input id="three" class="font buttonSize btn-num" type="button" value="3">
-            <input id="four" class="font buttonSize btn-num" type="button" value="4">
-            <input id="five" class="font buttonSize btn-num" type="button" value="5">
-            <input id="six" class="font buttonSize btn-num" type="button" value="6">
-            <input id="seven" class="font buttonSize btn-num" type="button" value="7">
-            <input id="eight" class="font buttonSize btn-num" type="button" value="8">
-            <input id="nine" class="font buttonSize btn-num" type="button" value="9">
+            <input id="zero" class="font border btn-num" type="button" value="0" onclick="inputValue(0)">
+            <input id="one" class="font buttonSize btn-num" type="button" value="1" onclick="inputValue(1)">
+            <input id="two" class="font buttonSize btn-num" type="button" value="2" onclick="inputValue(2)">
+            <input id="three" class="font buttonSize btn-num" type="button" value="3" onclick="inputValue(3)">
+            <input id="four" class="font buttonSize btn-num" type="button" value="4" onclick="inputValue(4)">
+            <input id="five" class="font buttonSize btn-num" type="button" value="5" onclick="inputValue(5)">
+            <input id="six" class="font buttonSize btn-num" type="button" value="6" onclick="inputValue(6)">
+            <input id="seven" class="font buttonSize btn-num" type="button" value="7" onclick="inputValue(7)">
+            <input id="eight" class="font buttonSize btn-num" type="button" value="8" onclick="inputValue(8)">
+            <input id="nine" class="font buttonSize btn-num" type="button" value="9" onclick="inputValue(9)">
 
             <input id="add" class="font buttonSize orange border btn-ops" type="button" value="+">
             <input id="subtract" class="font buttonSize orange border btn-ops" type="button" value="-">
@@ -36,7 +36,7 @@
 
             <input id="decimal" class="font border" type="button" value=".">
             <input id="plusMinus" class="font buttonSize" type="button" value="+/-">
-            <input id="clear" class="font buttonSize" type="button" value="C">
+            <input id="clear" class="font buttonSize" type="button" value="CE" onclick="clear()">
             <input id="percent" class="font buttonSize" type="button" value="%">
         </div>
         <!-- 
