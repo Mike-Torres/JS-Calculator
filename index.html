@@ -28,16 +28,16 @@
             <input id="eight" class="font buttonSize btn-num" type="button" value="8" onclick="inputValue(8)">
             <input id="nine" class="font buttonSize btn-num" type="button" value="9" onclick="inputValue(9)">
 
-            <input id="add" class="font buttonSize orange border btn-ops" type="button" value="+">
-            <input id="subtract" class="font buttonSize orange border btn-ops" type="button" value="-">
-            <input id="divide" class="font buttonSize orange border btn-ops" type="button" value="/">
-            <input id="multiply" class="font orange border btn-ops" type="button" value="x">
-            <input id="equal" class="font buttonSize orange border btn-ops" type="button" value="=">
+            <input id="add" class="font buttonSize orange border btn-ops" type="button" value="+" onclick="inputOperand('+')">
+            <input id="subtract" class="font buttonSize orange border btn-ops" type="button" value="-" onclick="inputOperand('-')">
+            <input id="divide" class="font buttonSize orange border btn-ops" type="button" value="/"onclick="inputOperand('/')">
+            <input id="multiply" class="font orange border btn-ops" type="button" value="x" onclick="inputOperand('x')">
+            <input id="plusMinus" class="font buttonSize" type="button" value="+/-" onclick="inputOperand('+/-')">
 
             <input id="decimal" class="font border" type="button" value=".">
-            <input id="plusMinus" class="font buttonSize" type="button" value="+/-">
             <input id="clear" class="font buttonSize" type="button" value="CE" onclick="clear()">
             <input id="percent" class="font buttonSize" type="button" value="%">
+            <input id="equal" class="font buttonSize orange border btn-ops" type="button" value="=" onclick="inputOperand('=')">
         </div>
         <!-- 
         <div id="add" class="font orange border">+</div>

@@ -34,6 +34,31 @@ inputValue = (num) => {
     }
 }
 
-clear = () => {
-    document.getElementById('display').value = ''
+//Operations 
+inputOperand = (operand) => {
+    var input_var = document.getElementById('display');
+    switch(operand){
+        case '+':
+            input_var.value += "+";
+            break;
+        case '-':
+            input_var.value += "-";
+            break;
+        case 'x':
+            input_var.value += "x";
+            break;
+        case '/':
+            input_var.value += "/";
+            break;
+        case '+/-':
+            input_var.value += "-" + input_var.value;
+            break;
+    }
 }
+
+
+
+// function clear() {
+//     document.getElementById('input').value = '';
+//     document.getElementById('display').value = '';
+// }
