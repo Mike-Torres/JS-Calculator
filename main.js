@@ -1,64 +1,84 @@
+//--------------------------------------input to display---------------------------------------------------
+
 inputValue = (num) => {
-    var input_var = document.getElementById('display');
+    var numberValue = document.getElementById('display');
     switch (num) {
         case 0:
-            input_var.value += "0";
+            numberValue.value += "0";
             break;
         case 1:
-            input_var.value += "1";
+            numberValue.value += "1";
             break;
         case 2:
-            input_var.value += "2";
+            numberValue.value += "2";
             break;
         case 3:
-            input_var.value += "3";
+            numberValue.value += "3";
             break;
         case 4:
-            input_var.value += "4";
+            numberValue.value += "4";
             break;
         case 5:
-            input_var.value += "5";
+            numberValue.value += "5";
             break;
         case 6:
-            input_var.value += "6";
+            numberValue.value += "6";
             break;
         case 7:
-            input_var.value += "7";
+            numberValue.value += "7";
             break;
         case 8:
-            input_var.value += "8";
+            numberValue.value += "8";
             break;
         case 9:
-            input_var.value += "9";
+            numberValue.value += "9";
             break;
     }
 }
 
-//Operations 
+//--------------------------------------Operations---------------------------------------------------
 inputOperand = (operand) => {
-    var input_var = document.getElementById('display');
-    switch(operand){
+    var operation = document.getElementById('display');
+    switch (operand) {
         case '+':
-            input_var.value += "+";
+            operation.value += "+";
             break;
         case '-':
-            input_var.value += "-";
+            operation.value += "-";
             break;
         case 'x':
-            input_var.value += "x";
+            operation.value += "x";
             break;
         case '/':
-            input_var.value += "/";
+            operation.value += "/";
             break;
         case '+/-':
-            input_var.value += "-" + input_var.value;
+            operation.value += "-" + operation.value;
             break;
     }
 }
+//--------------------------------------Non-Operands---------------------------------------------------
+backSpace = () => {
+    var backSpace = document.getElementById('display');
+    var removeLast = backSpace.value;
+    if (removeLast > 0) {
+        removeLast = removeLast.substring(0, removeLast.length - 1);
+        backSpace.value = removeLast;
+    }
+}
+backSpace();
+
+clear = () => {
+    document.getElementById("clear").addEventListener("click", () => {
+        document.getElementById('display').value = '';
+    }, false);
+}
+clear();
 
 
-
-// function clear() {
-//     document.getElementById('input').value = '';
-//     document.getElementById('display').value = '';
-// }
+var computationValue = document.getElementById("display").addEventListener("click", () => {
+    result = Math.floor(eval(computationValue.value))
+    console.log(computation)
+    document.getElementById('display').value = '=' + result;
+    console.log(computation)
+}, false);

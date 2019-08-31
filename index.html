@@ -13,7 +13,7 @@
     <Section class='calculator'>
         <form>
             <div>
-                <input id="display" class="fontSize" maxlength="10" placeholder="0">
+                <input id="display" class="fontSize computation" maxlength="10" placeholder="0">
             </div>
         </form>
         <div class="font border">
@@ -36,7 +36,7 @@
 
             <input id="decimal" class="font border" type="button" value=".">
             <input id="clear" class="font buttonSize" type="button" value="CE" onclick="clear()">
-            <input id="backSpace" class="font buttonSize" type="button" value="&#8592">
+            <input id="backSpace" class="font buttonSize" type="button" value="&#8592" onclick="backSpace()">
             <input id="equal" class="font buttonSize orange border btn-ops" type="button" value="=" onclick="inputOperand('=')">
         </div>
         <!-- 
