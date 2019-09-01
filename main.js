@@ -46,14 +46,17 @@ inputOperand = (operand) => {
         case '-':
             operation.value += "-";
             break;
-        case 'x':
-            operation.value += "x";
+        case "x":
+            operation.value += "*";
             break;
         case '/':
             operation.value += "/";
             break;
         case '+/-':
             operation.value += "-" + operation.value;
+            break;
+        case '.':
+            operation.value += ".";
             break;
     }
 }
@@ -75,10 +78,33 @@ clear = () => {
 }
 clear();
 
+computation = () => {
+    var computationValue = document.getElementById("display")
+    result = eval(computationValue.value)
+    document.getElementById('display').value = result.toFixed(2);
+}
 
-var computationValue = document.getElementById("display").addEventListener("click", () => {
-    result = Math.floor(eval(computationValue.value))
-    console.log(computation)
-    document.getElementById('display').value = '=' + result;
-    console.log(computation)
-}, false);
+clearPreviousResult = () => {
+    var display = document.getElementById('display');
+    if (calculationFinished) {
+        display.value = '0';
+        calculationFinished = false;
+    }
+}
+
+insertDecimal = () => {
+    var display = document.getElementById('display');
+    clearPreviousResult();
+    if (display.value.indexOf('.') === -1) display.value += '.';
+}
+
+// decimal = () => {
+//     if (decimalValue.length === 0) {
+//         decimalValue = "0.";
+//     } else {
+//         if (decimalValue.indexOf(".") == -1) {
+//             decimalValue = decimalValue + ".";
+//         };
+//     };
+//     document.calculator.display.value = decimalValue;
+// }
