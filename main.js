@@ -84,27 +84,12 @@ computation = () => {
     document.getElementById('display').value = result.toFixed(2);
 }
 
-clearPreviousResult = () => {
-    var display = document.getElementById('display');
-    if (calculationFinished) {
-        display.value = '0';
-        calculationFinished = false;
-    }
-}
-
-insertDecimal = () => {
-    var display = document.getElementById('display');
-    clearPreviousResult();
-    if (display.value.indexOf('.') === -1) display.value += '.';
-}
-
-// decimal = () => {
-//     if (decimalValue.length === 0) {
-//         decimalValue = "0.";
-//     } else {
-//         if (decimalValue.indexOf(".") == -1) {
-//             decimalValue = decimalValue + ".";
-//         };
-//     };
-//     document.calculator.display.value = decimalValue;
-// }
+var form = document.getElementById('decimal');
+form.addEventListener('submit', function(e) {
+	var submittedClass = 'js-submitted';
+	if (this.classList.contains(submittedClass)) {
+		e.preventDefault();
+	} else {
+		this.classList.add(submittedClass);
+	}
+}, false);
