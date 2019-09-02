@@ -1,5 +1,4 @@
 //--------------------------------------input to display---------------------------------------------------
-
 inputValue = (num) => {
     var numberValue = document.getElementById('display');
     switch (num) {
@@ -38,6 +37,7 @@ inputValue = (num) => {
 
 //--------------------------------------Operations---------------------------------------------------
 inputOperand = (operand) => {
+    var operandisPressed = false;
     var operation = document.getElementById('display');
     switch (operand) {
         case '+':
@@ -56,8 +56,11 @@ inputOperand = (operand) => {
             operation.value += "-" + operation.value;
             break;
         case '.':
-            operation.value += ".";
-            break;
+            if (operandisPressed) {
+                operandisPressed === true
+                operation.value += ".";
+            }
+            return operation.value += "."
     }
 }
 //--------------------------------------Non-Operands---------------------------------------------------
@@ -84,12 +87,22 @@ computation = () => {
     document.getElementById('display').value = result.toFixed(2);
 }
 
-var form = document.getElementById('decimal');
-form.addEventListener('submit', function(e) {
-	var submittedClass = 'js-submitted';
-	if (this.classList.contains(submittedClass)) {
-		e.preventDefault();
-	} else {
-		this.classList.add(submittedClass);
-	}
-}, false);
+function addDecimal () {
+    var currentNumber = document.getElementById('display');
+    if
+
+}
+
+// handleDecimal = () => {
+//     let decimalPoint = false;
+//     console.log(decimalPoint);
+//     if (decimalPoint === null) {
+//         document.getElementById('decimal').value = '.';
+//         console.log(decimalPoint)
+//     } else {
+//         decimalPoint === true;
+//         console.log(decimalPoint);
+//         document.getElementById('decimal').value = '';
+//         console.log(decimalPoint);
+//     }
+// }
