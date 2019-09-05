@@ -1,58 +1,95 @@
-var reg = /[+|x|\-|/]$/;
+const reg = /[+|*|\-|/]$/;
+const regToken = /(\d+\.\d+|\d+\.|\d+|\+|\-|\*|\/)$/;
 
 // Source of truth
 // This is the state in Angular, React, Vue, etc
 var currentFormula = '';
-var currentValue = '';
+var isLastButtonPressedEqualSign = false;
 
 // Dependent on source-of-truth
 // Angular, React, Vue's built in way of rendering HTML
-var displayFormula = document.querySelector('#current-formula');
-var displayValue = document.querySelector('#current-value');
+var currentValue = '';
+const displayFormula = document.querySelector('#current-formula');
+const displayValue = document.querySelector('#current-value');
 
 
 /* CRUD */
 
 /* CREATE */
 const inputValue = (param) => {
+    if (currentFormula === '0') {
+        currentFormula = '';
+    }
     currentFormula = currentFormula + param; // business-logic
-    displayFormula.innerHTML = currentFormula; // side-effect
-    console.log("param", param);
-    console.log("currentFormula", currentFormula);
+    renderView(param);
 }
 
 const inputOperand = (param) => {
-    // if(currentFormula.substr(-1) !== "+"  && currentFormula.substr(-1) !== "-" && currentFormula.substr(-1) !== "x" && currentFormula.substr(-1) !== "/")
-    if(!currentFormula.match(reg)){
+    if (!currentFormula.match(reg)) { // if it's not any of these in the regular expression then run it
         currentFormula = currentFormula + param; // business-logic
-        displayFormula.innerHTML = currentFormula; // side-effect
+        renderView(param);
+        // side-effect
+    } else {
+        // last character is an operand
+        currentFormula = currentFormula.slice(0, -1) + param;
+        renderView(param);
+        // side-effect
     }
-    console.log("param", param);
-    console.log("currentFormula", currentFormula);
 }
 
 const inputDecimal = (param) => {
-    console.log(param)
+    if (currentFormula.match(reg)) {
+        currentFormula = currentFormula + '0';
+    }
+    if (currentFormula.substr(-1) !== '.' && !currentValue.includes('.'))
+        currentFormula = currentFormula + '.';
+    renderView();
 }
 
 /*     DELETE  */
-const clearEntry = (param) => {
-    console.log(param)
-}
-
 const clearAll = (param) => {
-    console.log(param)
+    currentFormula = '0';
+    renderView();
+}
+const clearEntry = (param) => {
+    if (currentFormula === currentValue) {
+        currentFormula = '0';
+    } else {
+        currentFormula = currentFormula.slice(0, -currentValue.length);
+    }
+    renderView();
 }
 
-/*    UPDATE   */ 
-const doComputation = (param) => {
-    console.log(param)
+/*    UPDATE   */
+const doComputation = () => {
+    isLastButtonPressedEqualSign = true;
+    renderView();
 }
 
 const changeSign = (param) => {
-    console.log(param)
+    if (currentFormula[0] === '-') {
+        currentFormula = '-' + currentFormula;
+    } else {
+        currentFormula = currentFormula.substring(1);
+    }
+    renderView();
 }
 
+/* RENDER VIEW */
+const renderView = () => {
+    if (isLastButtonPressedEqualSign) {
+        currentValue = eval(currentFormula) + '';
+        isLastButtonPressedEqualSign = false;
+        displayFormula.innerHTML = currentFormula;
+        displayValue.innerHTML = currentValue + '';
+
+        currentFormula = currentValue;
+    } else {
+        currentValue = regToken.exec(currentFormula)[0]; // else run this
+        displayFormula.innerHTML = currentFormula;
+        displayValue.innerHTML = currentValue;
+    }
+}
 
 
 
