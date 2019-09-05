@@ -67,7 +67,9 @@ const doComputation = () => {
 }
 
 const changeSign = (param) => {
-    if (currentFormula[0] === '-') {
+    // If currentFormula and currentValue equal, change both signs
+    // Disallow multiple - in currentFormula
+    if(currentFormula[0] !== '-'){
         currentFormula = '-' + currentFormula;
     } else {
         currentFormula = currentFormula.substring(1);
