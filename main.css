@@ -1,13 +1,24 @@
-body {
-    margin: 50px;
+body {                        /* position calculator in the middle of page */
+    position: fixed;
+    top: 20%;
+    left: 31%;
+    background-image: url(calc_pic_3.jpg);
 }
-/*  Calculator Styles */
+                             /*  Calculator Styles */
 .calculator {
-    width: 600px;
+    width: 370px;
+}
+
+#intro{
+    position: inherit;
+    color: white;
+    margin-bottom: 50px;
+    margin-left: 40px;
+    font-size: 24px;
 }
 
 .display {
-    background-color: rgb(27, 18, 18);
+    background-color: #000000;
     padding-top: 10px;
     padding-bottom: 10px;
     color: white;
@@ -30,6 +41,9 @@ body {
     background-color: lightgray;
     color: #444;
     padding: 10px;
+    border-bottom-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+    background-color: #000000;
 }
 
 /*  Button Styles */
@@ -40,10 +54,12 @@ body {
 .btn {
     padding: 20px;
     font-size: 20px;
+    background-color: #000000;
+    color: white;
 }
 
 .btn-ops{
-    background-color: orange;
+    background-color: #43f0fe;
     color: white;
 }
 
@@ -51,8 +67,12 @@ body {
     grid-column: 1/3;
 }
 
-#clear {
-    background-color:pink;
+#clearAll {
+    background-color: #1e71bd;
+}
+
+#clear-entry{
+    background-color: #1e71bd;
 }
 
 
